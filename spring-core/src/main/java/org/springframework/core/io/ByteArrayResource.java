@@ -25,6 +25,8 @@ import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 
 /**
+ * 字节数组资源类
+ *
  * {@link Resource} implementation for a given byte array.
  * <p>Creates a {@link ByteArrayInputStream} for the given byte array.
  *
@@ -48,6 +50,8 @@ public class ByteArrayResource extends AbstractResource {
 
 
 	/**
+	 * 构造方法，传入字节数组对象
+	 *
 	 * Create a new {@code ByteArrayResource}.
 	 * @param byteArray the byte array to wrap
 	 */
@@ -56,6 +60,8 @@ public class ByteArrayResource extends AbstractResource {
 	}
 
 	/**
+	 * 构造方法，传入字节数组对象和描述
+	 *
 	 * Create a new {@code ByteArrayResource} with a description.
 	 * @param byteArray the byte array to wrap
 	 * @param description where the byte array comes from
@@ -68,6 +74,8 @@ public class ByteArrayResource extends AbstractResource {
 
 
 	/**
+	 * 返回底层的字节数组
+	 *
 	 * Return the underlying byte array.
 	 */
 	public final byte[] getByteArray() {
@@ -75,6 +83,8 @@ public class ByteArrayResource extends AbstractResource {
 	}
 
 	/**
+	 * 判断是否存在，总是返回true
+	 *
 	 * This implementation always returns {@code true}.
 	 */
 	@Override
@@ -83,6 +93,8 @@ public class ByteArrayResource extends AbstractResource {
 	}
 
 	/**
+	 * 返回底层数组的长度
+	 *
 	 * This implementation returns the length of the underlying byte array.
 	 */
 	@Override
@@ -91,6 +103,8 @@ public class ByteArrayResource extends AbstractResource {
 	}
 
 	/**
+	 * 返回底层数组的ByteArrayInputStream
+	 *
 	 * This implementation returns a ByteArrayInputStream for the
 	 * underlying byte array.
 	 * @see java.io.ByteArrayInputStream
@@ -101,6 +115,7 @@ public class ByteArrayResource extends AbstractResource {
 	}
 
 	/**
+	 * 描述
 	 * This implementation returns a description that includes the passed-in
 	 * {@code description}, if any.
 	 */
@@ -111,6 +126,7 @@ public class ByteArrayResource extends AbstractResource {
 
 
 	/**
+	 * 比较
 	 * This implementation compares the underlying byte array.
 	 * @see java.util.Arrays#equals(byte[], byte[])
 	 */
@@ -121,6 +137,7 @@ public class ByteArrayResource extends AbstractResource {
 	}
 
 	/**
+	 * 返回哈希码
 	 * This implementation returns the hash code based on the
 	 * underlying byte array.
 	 */

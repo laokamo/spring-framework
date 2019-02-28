@@ -22,6 +22,7 @@ import java.nio.channels.Channels;
 import java.nio.channels.WritableByteChannel;
 
 /**
+ * 写入资源接口
  * Extended interface for a resource that supports writing to it.
  * Provides an {@link #getOutputStream() OutputStream accessor}.
  *
@@ -32,6 +33,8 @@ import java.nio.channels.WritableByteChannel;
 public interface WritableResource extends Resource {
 
 	/**
+	 * 资源是否可写入
+	 *
 	 * Indicate whether the contents of this resource can be written
 	 * via {@link #getOutputStream()}.
 	 * <p>Will be {@code true} for typical resource descriptors;
@@ -46,6 +49,8 @@ public interface WritableResource extends Resource {
 	}
 
 	/**
+	 * 输出资源
+	 *
 	 * Return an {@link OutputStream} for the underlying resource,
 	 * allowing to (over-)write its content.
 	 * @throws IOException if the stream could not be opened
@@ -54,6 +59,8 @@ public interface WritableResource extends Resource {
 	OutputStream getOutputStream() throws IOException;
 
 	/**
+	 * 返回 WritableByteChannel
+	 *
 	 * Return a {@link WritableByteChannel}.
 	 * <p>It is expected that each call creates a <i>fresh</i> channel.
 	 * <p>The default implementation returns {@link Channels#newChannel(OutputStream)}
